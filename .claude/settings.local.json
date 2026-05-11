@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__get_page_text",
+      "mcp__Claude_in_Chrome__read_page",
+      "Bash(dir \"C:\\\\Users\\\\schembri\\\\Documents\\\\SITE DOC\")",
+      "Bash(dir \"C:\\\\Users\\\\schembri\\\\Documents\")",
+      "Bash(dir \"C:\\\\Users\\\\schembri\\\\Downloads\" /OD /B)",
+      "Bash(dir \"C:\\\\Users\\\\schembri\\\\Downloads\\\\site doc\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(where node *)",
+      "Bash(where npm *)",
+      "Bash(where npx *)",
+      "Bash(cmd /c \"dir /s /b C:\\\\Users\\\\schembri node.exe 2>&1 | head -5\")"
+    ]
+  }
+}
