@@ -113,10 +113,10 @@ export default function Services() {
             <div
               key={i}
               ref={(el) => { cardRefs.current[i] = el }}
-              className="card-lift group relative bg-white rounded-3xl overflow-hidden border border-gray-100 flex flex-col"
+              className="card-lift group relative bg-white rounded-3xl border border-gray-100 flex flex-col"
             >
               {/* Photo */}
-              <div className="relative h-52 w-full overflow-hidden">
+              <div className="relative h-52 mx-4 mt-4 overflow-hidden rounded-2xl shadow-md">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -128,7 +128,7 @@ export default function Services() {
               <div className="p-7 flex flex-col gap-4">
               {/* Highlight badge */}
               {service.highlight && (
-                <div className="absolute top-4 left-4 bg-brand-light text-white text-xs font-bold px-3 py-1 rounded-full">
+                <div className="absolute top-8 left-8 bg-brand-light text-white text-xs font-bold px-3 py-1 rounded-full">
                   {service.highlight}
                 </div>
               )}
