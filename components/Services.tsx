@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -15,6 +16,7 @@ const services = [
     description:
       'Sorrisos harmoniosos e confiantes através de clareamento dental, facetas de porcelana, lentes de contato dental e outros procedimentos estéticos de última geração.',
     highlight: 'Mais Procurado',
+    image: '/images/estetica.jpg',
   },
   {
     icon: (
@@ -26,6 +28,7 @@ const services = [
     description:
       'Recuperação de dentes comprometidos por cáries, fraturas ou desgaste, com materiais modernos que devolvem a função e a estética natural do sorriso.',
     highlight: null,
+    image: '/images/restauradora.jpg',
   },
   {
     icon: (
@@ -37,6 +40,7 @@ const services = [
     description:
       'A prevenção é o melhor tratamento. Limpeza profissional, orientações de higiene bucal e acompanhamento periódico para manter sua saúde em dia.',
     highlight: null,
+    image: '/images/preventiva.jpg',
   },
 ]
 
@@ -109,17 +113,28 @@ export default function Services() {
             <div
               key={i}
               ref={(el) => { cardRefs.current[i] = el }}
-              className="card-lift group relative bg-white rounded-3xl p-7 border border-gray-100 flex flex-col gap-5"
+              className="card-lift group relative bg-white rounded-3xl overflow-hidden border border-gray-100 flex flex-col"
             >
+              {/* Photo */}
+              <div className="relative h-52 w-full overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <div className="p-7 flex flex-col gap-4">
               {/* Highlight badge */}
               {service.highlight && (
-                <div className="absolute -top-3 left-6 bg-brand-light text-white text-xs font-bold px-3 py-1 rounded-full">
+                <div className="absolute top-4 left-4 bg-brand-light text-white text-xs font-bold px-3 py-1 rounded-full">
                   {service.highlight}
                 </div>
               )}
 
               {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-navy-800/8 text-navy-800 flex items-center justify-center group-hover:bg-navy-800 group-hover:text-white transition-all duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-navy-800/8 text-navy-800 flex items-center justify-center group-hover:bg-navy-800 group-hover:text-white transition-all duration-300">
                 {service.icon}
               </div>
 
@@ -129,10 +144,10 @@ export default function Services() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-500 leading-relaxed flex-1">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 {service.description}
               </p>
-
+              </div>
             </div>
           ))}
         </div>
